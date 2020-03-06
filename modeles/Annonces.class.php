@@ -2,7 +2,7 @@
 
 class Annonces extends Model{
 
-    protected $fillAttributes = ['titre','description'];
+    protected $fillAttributes = ['annonce_id', 'annonce_titre', 'annonce_description', 'annonce_prix', 'categorie_id', 'usager_id'];
 
     public static function getAllAnnonces(){
 

@@ -12,7 +12,7 @@ class Routeur {
 		["GET",    	"inscription",		       "Inscription",  "index"],
   	];
 
-  	const BASE_URI = "\/project_web2\/";
+  	const BASE_URI = "\/project_web2_test\/";
 
   	const ERROR_RESSOURCE  = 1;
   

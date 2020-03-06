@@ -61,7 +61,8 @@ abstract class Model {
     public static function getItem($id) {
         $tabName = get_called_class();
         $sPDO = SingletonPDO::getInstance();
-        $oPDOStatement = $sPDO->prepare("SELECT * FROM $tabName WHERE ".$tabName."_id=:id"); 
+        $prefix = substr($tabName, 0, -1);
+        $oPDOStatement = $sPDO->prepare("SELECT * FROM $tabName WHERE ".$prefix."_id=:id"); 
         $oPDOStatement->bindValue(':id', $id); 
         $oPDOStatement->execute();
 
@@ -80,6 +81,7 @@ abstract class Model {
     public static function postItem($elmClass) { 
         try{
             $tabName = get_called_class();
+            $prefix = substr($tabName, 0, -1);
 
             $sPDO = SingletonPDO::getInstance();
             $req = "INSERT INTO $tabName SET ";
@@ -173,9 +175,9 @@ abstract class Model {
      */
     public static function deleteItem($elmClass) {
         $tabName = get_called_class();
-
         $sPDO = SingletonPDO::getInstance();
-        $req = "DELETE FROM $tabName WHERE ".$tabName."_id=".$elmClass->{strtolower($tabName)."_id"};
+        $prefix = substr($tabName, 0, -1);
+        $req = "DELETE FROM $tabName WHERE ".$prefix."_id=".$elmClass->{strtolower($prefix)."_id"};
         $oPDOStatement = $sPDO->prepare($req);
         $oPDOStatement->execute();
         if ($oPDOStatement->rowCount() == 0) {

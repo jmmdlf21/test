@@ -8,13 +8,9 @@ $this->titre = "Accueil";
 
     <div class="col-sm-4">
 
-        <?php foreach($data as $annonce):?>
 
-        <h3> <?=$annonce->titre?> </h3>
-        <p> <?= $annonce->description?></p>
+        <h3> <?=$data->annonce_titre?> </h3>
 
-        <?php endforeach?>
-            
     </div>
 
 </div>
