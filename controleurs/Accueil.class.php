@@ -15,7 +15,10 @@ class Accueil {
 
 
 		// Put annonce
-		
+
+		$att2 = array("annonce_id"=>4, "annonce_description"=>"test description2222");
+		$test2 = new Annonces($att2);
+		$test2->putAnnonce();
 
 		// Post annonce
 		/*

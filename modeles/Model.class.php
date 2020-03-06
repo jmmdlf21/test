@@ -130,6 +130,7 @@ abstract class Model {
     public static function putItem($elmClass) {
         try{        
             $tabName = get_called_class();
+            $prefix = substr($tabName, 0, -1);
 
             $sPDO = SingletonPDO::getInstance();
             $req = "UPDATE $tabName SET ";
@@ -143,7 +144,7 @@ abstract class Model {
             }
 
             $req  = substr($req, 0, -2);
-            $req .= " WHERE ".$tabName."_id=".$elmClass->{strtolower($tabName)."_id"}; 
+            $req .= " WHERE ".$prefix."_id=".$elmClass->{strtolower($prefix)."_id"}; 
             $oPDOStatement = $sPDO->prepare($req);
 
             foreach($elmClass as $key => $value){
