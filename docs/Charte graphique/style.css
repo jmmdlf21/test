@@ -1,0 +1,39 @@
+
+body {
+    min-width: 1080px;
+    font-family: 'Inika', serif;
+  }
+  
+
+.fab {
+    font-size: 4em;
+    width:2em;
+    color: brown;
+    
+}
+img{
+
+    width:50%;
+}
+
+.lien {
+
+    color:#123040;
+    font-size:1.5em;
+    text-align: center;
+    /* color:white; */
+    text-decoration: none;
+}
+.lien:hover {
+
+    color:#368FBF
+}
+.lien:active {
+
+    color:#40ACE6
+}
+section {
+
+    border:1px solid black;
+    padding:20px;
+}
