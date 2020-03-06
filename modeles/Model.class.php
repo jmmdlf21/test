@@ -11,7 +11,6 @@ abstract class Model {
     protected $fillAttributes = array();
 
     public function __construct($attributes = null){
-
         if($attributes !== null){
 
             foreach ($attributes as $key => $value) {
